@@ -1,8 +1,9 @@
 /* VARIABLES */
 :root{
   --input-checked-color: #ce1010;
-  --fieldset-color: #222;
+  --grey-color: #222;
   --white-color: #fff;
+  --border-radius: 4px;
 }
 
 /* 1 - BASE FORM STYLES */
@@ -79,7 +80,7 @@ input:checked + label[for="madona"]{
 fieldset{
   padding: 20px;
   margin: 20px 0;
-  border: 3px solid var(--fieldset-color);
+  border: 3px solid var(--grey-color);
 }
 
 legend{
@@ -93,9 +94,9 @@ input[type="email"], input[type="telephone"]{
   margin-bottom: 20px;
   padding: 10px 10px 10px 50px;
   border: 0;
-  border-radius: 4px;
+  border-radius: var(--border-radius);
   background: url(img/inputs.png) no-repeat;
-  background-color: var(--fieldset-color);
+  background-color: var(--grey-color);
   font-size: 16px;
   color: var(--white-color);
   float: left;
@@ -122,9 +123,9 @@ select{
   margin: 30px 0;
   padding: 10px 50px 10px 10px;
   background: url(img/select.png) no-repeat 95% center;
-  background-color: var(--fieldset-color);
+  background-color: var(--grey-color);
   color: var(--white-color);
-  border-radius: 4px;
+  border-radius: var(--border-radius);
   border: 2px solid var(--white-color);
   width: 280px;
 }
@@ -135,10 +136,31 @@ input[type="submit"]{
   color: var(--white-color);
   font-size: 20px;
   letter-spacing: 0.1em;
-  border-radius: 4px;
+  border-radius: var(--border-radius);
   border: 0;
   box-shadow: 1px 3px 5px rgba(0,0,0,0.5);
   width: 280px;
 }
 
 /* 6 - INPUT VALIDATION STYLES */
+input[type="email"]:valid, input[type="telephone"]:valid{
+  border: 2px solid var(--white-color);
+}
+
+input[type="email"]:valid + .tick, input[type="telephone"]:valid + .tick{
+  background: url(img/tick.png) center;
+  background-size: 100%;
+  display: block;
+  width: 20px;
+  height: 20px;
+  float: left;
+  margin: 10px;
+}
+
+input[type="email"]:valid{
+  background-position: 7px -22px;
+}
+
+input[type="telephone"]:valid{
+  background-position: 7px -97px;
+}
